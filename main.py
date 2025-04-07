@@ -241,6 +241,11 @@ def send_to_gpt(message, system_prompt=None):
 def generate_natural_response(prompt):
     return send_to_gpt(prompt)
 
+
+@app.route('/')
+def index():
+    return "¡Hola, la aplicación está corriendo!"
+
 # ---------------------------
 # ENDPOINT PRINCIPAL DEL CHATBOT
 # ---------------------------
@@ -361,6 +366,7 @@ def chat():
         response_text = "No se pudo determinar la intención de la consulta. Por favor, intente de nuevo."
 
     return jsonify({"response": response_text})
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Usa el puerto asignado o 5000 por defecto
     app.run(host="0.0.0.0", port=port, debug=True)
