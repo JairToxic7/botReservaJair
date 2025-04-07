@@ -287,7 +287,7 @@ def chat():
             info = f"No se encontró un menú para {query_date.strftime('%d/%m/%Y')}."
         prompt = (
             f"El usuario consultó el menú para la fecha {query_date.strftime('%d/%m/%Y')}. {info} "
-            "Genera una respuesta natural y amigable para el usuario."
+            "Genera una respuesta natural y amigable para el usuario si."
         )
         response_text = generate_natural_response(prompt)
 
